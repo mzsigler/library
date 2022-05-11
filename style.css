@@ -1,0 +1,30 @@
+:root {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    --font: #E4D4C8;
+    --background: #0A7029;
+    --accent: #A47551;
+    --card: #523A28;
+
+}
+
+.wrapper {
+    width: 95vw;
+    min-height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    background-color: #0A7029;
+    gap: 10px;
+}
+
+
+.card {
+    background-color: var(--card);
+    color: var(--font);
+    padding: 8px;
+    margin: 8px;
+    border: 1px solid white;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
