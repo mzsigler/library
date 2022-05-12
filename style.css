@@ -1,30 +1,107 @@
 :root {
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
-    --font: #E4D4C8;
-    --background: #0A7029;
-    --accent: #A47551;
-    --card: #523A28;
+    --yellow: #FEDE00;
+    --green: #0A7029;
+    --yellowgreen: #C8DF52;
+    --mint: #DBE8D8;
 
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    background: linear-gradient(to right, var(--mint),var(--yellowgreen))
+}
+
+.header {
+    color: var(--green);
+    height: 50px;
+    font-size: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95vw;
+}
+
+button {
+    width: fit-content;
+    height: fit-content;
+    padding: 8px;
+}
+
+#btnAddNew {
+    margin-left: auto;
 }
 
 .wrapper {
     width: 95vw;
     min-height: 80vh;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     background-color: #0A7029;
     gap: 10px;
 }
 
 
 .card {
-    background-color: var(--card);
-    color: var(--font);
-    padding: 8px;
+    background-color: var(--yellow);
+    color: var(--green);
     margin: 8px;
+    padding: 8px;
     border: 1px solid white;
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
+    align-items: center;
+}
+
+.modal-wrapper {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: lightslategray;
+    opacity: 50%;
+    z-index: 1000;
+}
+
+.add-new-modal {
+    width: 500px;
+    min-height: 50vh;
+    z-index: 5000;
+    position: fixed;
+    opacity: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--green);
+    color: mintcream;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+   
+}
+
+.modal-wrapper.hide {
+    display: none;
+}
+
+.add-new-modal.hide {
+    display: none;
+}
+
+
+input {
+    height: fit-content;
+}
+
+.submit-form-div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }

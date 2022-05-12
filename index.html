@@ -9,6 +9,25 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="header">Mikel's Library <button id="btnAddNew">Add New Book</button></div>
     <div class="wrapper" id="wrapper"></div>
+
+    <div class="modal-wrapper hide" id="modal-wrapper"> </div>
+    <div class="add-new-modal hide" id="add-new-modal">
+        <p>Add a book to the library.</p>
+        
+            <div class="submit-form-div">
+                <label for="title">Title</label>
+                <input type="text" name="title-field" id="title-field">
+                <label for="author">Author</label>
+                <input type="text" name="author-field" id="author-field">
+                <label for="pages">Pages</label>
+                <input for="pages" name="pages-field" id="pages-field">
+                <label for="read">Read?</label>
+                <input type="text" name="read-field" id="read-field">
+                <button type="submit" id="modal-submit-button">Submit</button>
+                        <button id="close-modal">Close</button>
+                </div>
+    </div>
 </body>
 </html>
