@@ -1,4 +1,4 @@
-bookArray = [];
+let bookArray = [];
 
 const addNewButton = document.getElementById('btnAddNew');
 const closeModalButton = document.getElementById('close-modal');
@@ -10,17 +10,26 @@ const readInput = document.getElementById('read-field');
 
 buttonSubmit.addEventListener('click', handleForm);
 
+
+addNewBook = function(title, author, pages, read) {
+    args = arguments;
+   let a = new Book(args[0], args[1], args[2], args[3]);
+    bookArray.push(a);
+   
+}
+
+
 function handleForm() {
-    let tit = titleInput.value.toString();
-    let auth = authorInput.value.toString();
+    let tit = titleInput.value;
+    let auth = authorInput.value;
     let pag = pagesInput.value;
-    let red = readInput.value.toString();
+    let red = readInput.value;
 
+    let a = new Book(tit, auth, pag, red);
 
-    modalToggle();
+    bookArray.push(a)
     clearFields();
-    
-    addNewBook(tit, auth, pag, red);
+    modalToggle();
 
     
 }
@@ -60,19 +69,13 @@ function Book(title, author, pages, read){
 // }
 
 
-addNewBook = function(title, author, pages, read) {
-    args = arguments;
-    a = new Book(args[0], args[1], args[2], args[3]);
-    bookArray.push(a);
-   
-}
-
 
 addNewBook("The Stand", "Stephen King", 4982, "Read");
 addNewBook("Catch-22", "Joseph Heller", 412, "Read");
 addNewBook("Slaughterhouse Five", "Kurt Vonnegut", 391, "Read");
 addNewBook("Maximum Boost", "Corky Bell", 482, "Read");
 addNewBook("Norweigian Wood", "Haruki Murakami", 376, "Read")
+
 
 function displayBook(book, index) {
     const wrapper = document.getElementById("wrapper");
@@ -91,6 +94,23 @@ function displayBook(book, index) {
 
 
 
-bookArray.forEach((book, index) => {
-    displayBook(book, index)
-});
+arrayAdder = function() {
+    
+    bookArray.forEach((book, index) => { 
+          displayBook(book, index)
+    
+    });
+}
+
+
+arrayAdder();
+console.table(bookArray);
+
+
+function checkArray(obj) {
+    if (bookArray.filter(book => book.title === obj.title).length > 0) {
+        return 
+    } else {
+        arrayAdder(obj) 
+    }
+};
