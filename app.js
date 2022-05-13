@@ -78,9 +78,13 @@ addNewBook("Norweigian Wood", "Haruki Murakami", 376, "Read")
 
 
 function displayBook(book, index) {
+    let title = book.title;
+    titleLower = title.toLowerCase();
+    titleClass = titleLower.replace(/\s+/g, '');
     const wrapper = document.getElementById("wrapper");
     const newCard = document.createElement('div');
     newCard.classList.add('card');
+    newCard.classList.add(titleClass)
     newCard.classList.add(index);
     newCard.innerHTML = `<h2> Title: ${book.title} </h2>` +
                         `<p> Author: ${book.author} </p>` +
@@ -107,10 +111,10 @@ arrayAdder();
 console.table(bookArray);
 
 
-function checkArray(obj) {
-    if (bookArray.filter(book => book.title === obj.title).length > 0) {
-        return 
-    } else {
-        arrayAdder(obj) 
-    }
-};
+// function checkArray(obj) {
+//     if (bookArray.filter(book => book.title === obj.title).length > 0) {
+//         return 
+//     } else {
+//         arrayAdder(obj) 
+//     }
+// };
