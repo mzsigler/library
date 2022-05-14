@@ -5,6 +5,10 @@
     --green: #0A7029;
     --yellowgreen: #C8DF52;
     --mint: #DBE8D8;
+    --cognac: #907970;
+    --khaki: #CAC1B0;
+    --maroon: #854B50;
+    --slate: #8693A0;
 
 }
 
@@ -12,11 +16,11 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
-    background: linear-gradient(to right, var(--mint),var(--yellowgreen))
+    background: linear-gradient(to right, var(--khaki), var(--cognac));
 }
 
 .header {
-    color: var(--green);
+    color: var(--maroon);
     height: 50px;
     font-size: 24px;
     width: 100%;
@@ -38,24 +42,33 @@ button {
 
 .wrapper {
     width: 95vw;
-    min-height: 80vh;
+    min-height: 60vh;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    background-color: #0A7029;
+    background-color: var(--slate);
     gap: 10px;
 }
 
 
 .card {
-    background-color: var(--yellow);
-    color: var(--green);
+    background-color: var(--maroon);
+    color: white;
     margin: 8px;
     padding: 8px;
-    border: 1px solid white;
+    border: 5px solid var(--cognac);
     display: grid;
     grid-template-columns: 1fr;
+    gap: 8px;
     justify-items: center;
-    align-items: center;
+}
+
+.readButton, .deleteButton {
+    background: var(--slate);
+    color: white;
+}
+
+.deleteButton:hover {
+    background: red;;
 }
 
 .modal-wrapper {
@@ -65,13 +78,14 @@ button {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: lightslategray;
+    background-color: var(--slate);
     opacity: 50%;
     z-index: 1000;
 }
 
 .add-new-modal {
     width: 500px;
+    padding: 8px;
     min-height: 50vh;
     z-index: 5000;
     position: fixed;
@@ -79,12 +93,30 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: var(--green);
+    background: var(--maroon);
     color: mintcream;
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
    
+}
+
+.modal-buttons {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 16px;
+   
+}
+
+#close-modal:hover {
+    background: red;
+    color: white;
+}
+
+#modal-submit-button:hover {
+    background: green;
+    color: white;
 }
 
 .modal-wrapper.hide {

@@ -72,11 +72,11 @@ function Book(title, author, pages, read){
 
 
 
-addNewBook("The Stand", "Stephen King", 4982, "Read");
+// addNewBook("The Stand", "Stephen King", 4982, "Read");
 addNewBook("Catch-22", "Joseph Heller", 412, "Read");
 addNewBook("Slaughterhouse Five", "Kurt Vonnegut", 391, "Read");
-addNewBook("Maximum Boost", "Corky Bell", 482, "Read");
-addNewBook("Norweigian Wood", "Haruki Murakami", 376, "Read");
+// addNewBook("Maximum Boost", "Corky Bell", 482, "Read");
+// addNewBook("Norweigian Wood", "Haruki Murakami", 376, "Read");
 
 
 function displayBook(book, index) {
@@ -91,7 +91,9 @@ function displayBook(book, index) {
     newCard.innerHTML = `<h2> Title: ${book.title} </h2>` +
                         `<p> Author: ${book.author} </p>` +
                         `<p> Pages: ${book.pages} </p>` +
-                        `<p> Read: ${book.read} </p>`
+                        `<p> Read: ${book.read} </p>` +
+                        `<button class="readButton">Toggle Read</button>` +
+                        `<button class="deleteButton">Delete</button>`
                         ;
 
     
