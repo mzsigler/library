@@ -27,9 +27,11 @@ function handleForm() {
 
     let a = new Book(tit, auth, pag, red);
 
+    clearDivs();
     bookArray.push(a)
     clearFields();
     modalToggle();
+    arrayAdder();
 
     
 }
@@ -52,7 +54,7 @@ function modalToggle() {
 
     modBackground.classList.toggle('hide');
     modal.classList.toggle('hide');
-}
+};
 
 
 function Book(title, author, pages, read){
@@ -60,7 +62,7 @@ function Book(title, author, pages, read){
     this.author = author
     this.pages = pages
     this.read = read
-}
+};
 
 
 
@@ -74,7 +76,7 @@ addNewBook("The Stand", "Stephen King", 4982, "Read");
 addNewBook("Catch-22", "Joseph Heller", 412, "Read");
 addNewBook("Slaughterhouse Five", "Kurt Vonnegut", 391, "Read");
 addNewBook("Maximum Boost", "Corky Bell", 482, "Read");
-addNewBook("Norweigian Wood", "Haruki Murakami", 376, "Read")
+addNewBook("Norweigian Wood", "Haruki Murakami", 376, "Read");
 
 
 function displayBook(book, index) {
@@ -94,27 +96,22 @@ function displayBook(book, index) {
 
     
     wrapper.appendChild(newCard);
-}
+};
 
 
 
-arrayAdder = function() {
-    
+arrayAdder = function() {  
     bookArray.forEach((book, index) => { 
           displayBook(book, index)
     
     });
-}
+};
 
+function clearDivs() {
+    cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.remove();
+    });
+    
+};
 
-arrayAdder();
-console.table(bookArray);
-
-
-// function checkArray(obj) {
-//     if (bookArray.filter(book => book.title === obj.title).length > 0) {
-//         return 
-//     } else {
-//         arrayAdder(obj) 
-//     }
-// };
