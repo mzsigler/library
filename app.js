@@ -122,6 +122,26 @@ function clearDivs() {
 
 addPlaceHolders();
 
-const readButtons = document.getElementsByClassName('readButton');
-console.log(readButtons);
-readButton.addEventListener('click', toggleRead);
+
+
+function deleteButtonsClick(e) {
+    const target = e.target.id;
+    const targetButton = e.target.className;
+    console.log(target);
+    console.log(targetButton);
+    
+    if( targetButton == "deleteButton" ) {
+        bookArray.splice(target, 1);
+        console.log(bookArray);
+        clearDivs();
+        arrayAdder();
+    };
+};
+
+const deleteButtons = document.getElementsByClassName('deleteButton');
+
+deleteButtonsArray = Array.from(deleteButtons);
+
+deleteButtonsArray.forEach(button => addEventListener('click', deleteButtonsClick))
+
+
