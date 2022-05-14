@@ -10,10 +10,19 @@ const readInput = document.getElementById('read-field');
 
 buttonSubmit.addEventListener('click', handleForm);
 
+function addPlaceHolders() {
+    addNewBook("Catch-22", "Joseph Heller", 412, "Yes");
+    addNewBook("Slaughterhouse Five", "Kurt Vonnegut", 391, "Yes");
+    addNewBook("Maximum Boost", "Corky Bell", 482, "Yes");
+    arrayAdder();
+}
 
-addNewBook = function(title, author, pages, read) {
+
+
+
+const addNewBook = function(title, author, pages, read) {
     args = arguments;
-   let a = new Book(args[0], args[1], args[2], args[3]);
+    let a = new Book(args[0], args[1], args[2], args[3]);
     bookArray.push(a);
    
 }
@@ -66,17 +75,12 @@ function Book(title, author, pages, read){
 
 
 
-// Book.prototype.info = function() {
-//     return `${this.title} by ${this.author}. ${this.pages} pages. ${this.read}`;
-// }
 
 
+// addNewBook("Catch-22", "Joseph Heller", 412, "Yes");
+// addNewBook("Slaughterhouse Five", "Kurt Vonnegut", 391, "Yes");
+// addNewBook("Maximum Boost", "Corky Bell", 482, "Yes");
 
-// addNewBook("The Stand", "Stephen King", 4982, "Read");
-addNewBook("Catch-22", "Joseph Heller", 412, "Read");
-addNewBook("Slaughterhouse Five", "Kurt Vonnegut", 391, "Read");
-// addNewBook("Maximum Boost", "Corky Bell", 482, "Read");
-// addNewBook("Norweigian Wood", "Haruki Murakami", 376, "Read");
 
 
 function displayBook(book, index) {
@@ -117,3 +121,4 @@ function clearDivs() {
     
 };
 
+addPlaceHolders();
