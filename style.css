@@ -3,10 +3,6 @@
 :root {
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
-    --yellow: #FEDE00;
-    --green: #0A7029;
-    --yellowgreen: #C8DF52;
-    --mint: #DBE8D8;
     --cognac: #907970;
     --khaki: #CAC1B0;
     --maroon: #854B50;
@@ -72,13 +68,15 @@ button {
     border-radius: 5px;
 }
 
+
 .readButton, .deleteButton {
     background: var(--slate);
     color: white;
 }
 
 .deleteButton:hover {
-    background: red;;
+    border: 2px solid red;
+    
 }
 
 .modal-wrapper {

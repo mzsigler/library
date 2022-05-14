@@ -1,5 +1,8 @@
+
+// array for all the books
 let bookArray = [];
 
+// buttons and forms constants.
 const addNewButton = document.getElementById('btnAddNew');
 const closeModalButton = document.getElementById('close-modal');
 const buttonSubmit = document.getElementById('modal-submit-button');
@@ -10,12 +13,27 @@ const readInput = document.getElementById('read-field');
 const deleteButton = document.getElementById('deleteButton');
 
 
+// This just pops up the modal when the button is clicked and closes it when done.
 
+addNewButton.addEventListener('click', modalToggle);
+closeModalButton.addEventListener('click', modalToggle);
+
+// Defining my book object.
+function Book(title, author, pages, read){
+    this.title = title
+    this.author = author
+    this.pages = pages
+    this.read = read
+};
+
+
+// Fix me!
 const toggleRead = function(e){
     console.log(e);
 }
 
-buttonSubmit.addEventListener('click', handleForm);
+
+// This just adds in some placeholder books so that it's not just blank when you open it.
 
 function addPlaceHolders() {
     addNewBook("Catch-22", "Joseph Heller", 412, "Yes");
@@ -26,6 +44,7 @@ function addPlaceHolders() {
 
 
 
+// Function to add new books to the array, used to add placeholders.. 
 
 const addNewBook = function(title, author, pages, read) {
     args = arguments;
@@ -34,6 +53,9 @@ const addNewBook = function(title, author, pages, read) {
    
 }
 
+// form button event listener and associated function. 
+
+buttonSubmit.addEventListener('click', handleForm);
 
 function handleForm() {
     let tit = titleInput.value;
@@ -60,9 +82,6 @@ function clearFields() {
 }
 
 
-addNewButton.addEventListener('click', modalToggle);
-closeModalButton.addEventListener('click', modalToggle);
-
 
 function modalToggle() {
     const modBackground = document.getElementById('modal-wrapper');
@@ -73,14 +92,9 @@ function modalToggle() {
 };
 
 
-function Book(title, author, pages, read){
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-};
 
 
+// This makes the divs and gives them unique identifiers and such. 
 
 function displayBook(book, index) {
     let title = book.title;
@@ -104,7 +118,7 @@ function displayBook(book, index) {
 };
 
 
-
+// Adds each book in the array to the page by running it through the displayBook function.
 arrayAdder = function() {  
     bookArray.forEach((book, index) => { 
           displayBook(book, index)
@@ -112,6 +126,7 @@ arrayAdder = function() {
     });
 };
 
+// Clears divs before adding from array. Otherwise you get duplicates. 
 function clearDivs() {
     cards = document.querySelectorAll('.card');
     cards.forEach(card => {
@@ -120,19 +135,16 @@ function clearDivs() {
     
 };
 
+// Function call to insert the placeholder books.
 addPlaceHolders();
-
 
 
 function deleteButtonsClick(e) {
     const target = e.target.id;
     const targetButton = e.target.className;
-    console.log(target);
-    console.log(targetButton);
     
     if( targetButton == "deleteButton" ) {
         bookArray.splice(target, 1);
-        console.log(bookArray);
         clearDivs();
         arrayAdder();
     };
@@ -143,5 +155,7 @@ const deleteButtons = document.getElementsByClassName('deleteButton');
 deleteButtonsArray = Array.from(deleteButtons);
 
 deleteButtonsArray.forEach(button => addEventListener('click', deleteButtonsClick))
+
+
 
 
