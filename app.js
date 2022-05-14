@@ -7,6 +7,13 @@ const titleInput = document.getElementById('title-field');
 const authorInput = document.getElementById('author-field');
 const pagesInput = document.getElementById('pages-field');
 const readInput = document.getElementById('read-field');
+const deleteButton = document.getElementById('deleteButton');
+
+
+
+const toggleRead = function(e){
+    console.log(e);
+}
 
 buttonSubmit.addEventListener('click', handleForm);
 
@@ -75,14 +82,6 @@ function Book(title, author, pages, read){
 
 
 
-
-
-// addNewBook("Catch-22", "Joseph Heller", 412, "Yes");
-// addNewBook("Slaughterhouse Five", "Kurt Vonnegut", 391, "Yes");
-// addNewBook("Maximum Boost", "Corky Bell", 482, "Yes");
-
-
-
 function displayBook(book, index) {
     let title = book.title;
     titleLower = title.toLowerCase();
@@ -96,8 +95,8 @@ function displayBook(book, index) {
                         `<p> By: ${book.author} </p>` +
                         `<p> Pages: ${book.pages} </p>` +
                         `<p> Read: ${book.read} </p>` +
-                        `<button class="readButton">Toggle Read</button>` +
-                        `<button class="deleteButton">Delete</button>`
+                        `<button class="readButton" id="${index}">Toggle Read</button>` +
+                        `<button class="deleteButton" id="${index}">Delete</button>`
                         ;
 
     
@@ -122,3 +121,7 @@ function clearDivs() {
 };
 
 addPlaceHolders();
+
+const readButtons = document.getElementsByClassName('readButton');
+console.log(readButtons);
+readButton.addEventListener('click', toggleRead);
