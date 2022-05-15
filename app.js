@@ -47,7 +47,7 @@ function addPlaceHolders() {
 // Function to add new books to the array, used to add placeholders.. 
 
 const addNewBook = function(title, author, pages, read) {
-    args = arguments;
+    let args = arguments;
     let a = new Book(args[0], args[1], args[2], args[3]);
     bookArray.push(a);
    
@@ -98,8 +98,8 @@ function modalToggle() {
 
 function displayBook(book, index) {
     let title = book.title;
-    titleLower = title.toLowerCase();
-    titleClass = titleLower.replace(/\s+/g, '');
+    let titleLower = title.toLowerCase();
+    let titleClass = titleLower.replace(/\s+/g, '');
     const wrapper = document.getElementById("wrapper");
     const newCard = document.createElement('div');
     newCard.classList.add('card');
