@@ -108,7 +108,7 @@ function displayBook(book, index) {
     newCard.innerHTML = `<h2>  ${book.title} </h2>` +
                         `<p> By: ${book.author} </p>` +
                         `<p> Pages: ${book.pages} </p>` +
-                        `<p> Read: ${book.read} </p>` +
+                        `<p class="read-status"> Read: ${book.read} </p>` +
                         `<button class="readButton" id="${index}">Toggle Read</button>` +
                         `<button class="deleteButton" id="${index}">Delete</button>`
                         ;
@@ -150,11 +150,29 @@ function deleteButtonsClick(e) {
     };
 };
 
+function readButtonClick(e) {
+    const book = e.target.id;
+    if (bookArray[book].read == "Yes" || bookArray[book].read == "yes") {
+        bookArray[book].read = "No";
+    } else {
+        bookArray[book].read = "Yes";
+    }
+    
+    clearDivs();
+    arrayAdder();
+
+}
+
 const deleteButtons = document.getElementsByClassName('deleteButton');
 
 deleteButtonsArray = Array.from(deleteButtons);
 
 deleteButtonsArray.forEach(button => addEventListener('click', deleteButtonsClick))
+
+const readButtons = document.getElementsByClassName('readButton');
+readButtonArray = Array.from(readButtons);
+
+readButtonArray.forEach(button => addEventListener('click', readButtonClick));
 
 
 
