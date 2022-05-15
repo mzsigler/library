@@ -36,9 +36,9 @@ const toggleRead = function(e){
 // This just adds in some placeholder books so that it's not just blank when you open it.
 
 function addPlaceHolders() {
-    addNewBook("Catch-22", "Joseph Heller", 412, "Yes");
-    addNewBook("Slaughterhouse Five", "Kurt Vonnegut", 391, "Yes");
-    addNewBook("Maximum Boost", "Corky Bell", 482, "Yes");
+    addNewBook("Catch-22", "Joseph Heller", 453, "Yes");
+    addNewBook("Slaughterhouse Five", "Kurt Vonnegut", 240, "Yes");
+    addNewBook("Maximum Boost", "Corky Bell", 256, "Yes");
     arrayAdder();
 }
 
@@ -162,6 +162,8 @@ function readButtonClick(e) {
     arrayAdder();
 
 }
+
+// This makes the buttons on the cards work to toggle read status and delete items. 
 
 const deleteButtons = document.getElementsByClassName('deleteButton');
 
