@@ -1,4 +1,4 @@
-
+"use strict";
 // array for all the books
 let bookArray = [];
 
@@ -119,7 +119,7 @@ function displayBook(book, index) {
 
 
 // Adds each book in the array to the page by running it through the displayBook function.
-arrayAdder = function() {  
+let arrayAdder = function() {  
     bookArray.forEach((book, index) => { 
           displayBook(book, index)
     
@@ -128,7 +128,7 @@ arrayAdder = function() {
 
 // Clears divs before adding from array. Otherwise you get duplicates. 
 function clearDivs() {
-    cards = document.querySelectorAll('.card');
+    let cards = document.querySelectorAll('.card');
     cards.forEach(card => {
         card.remove();
     });
@@ -167,12 +167,12 @@ function readButtonClick(e) {
 
 const deleteButtons = document.getElementsByClassName('deleteButton');
 
-deleteButtonsArray = Array.from(deleteButtons);
+let deleteButtonsArray = Array.from(deleteButtons);
 
 deleteButtonsArray.forEach(button => addEventListener('click', deleteButtonsClick))
 
 const readButtons = document.getElementsByClassName('readButton');
-readButtonArray = Array.from(readButtons);
+let readButtonArray = Array.from(readButtons);
 
 readButtonArray.forEach(button => addEventListener('click', readButtonClick));
 
