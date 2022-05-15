@@ -106,8 +106,8 @@ function displayBook(book, index) {
     newCard.classList.add(titleClass)
     newCard.classList.add(index);
     newCard.innerHTML = `<h2>  ${book.title} </h2>` +
-                        `<p> By: ${book.author} </p>` +
-                        `<p> Pages: ${book.pages} </p>` +
+                        `By: ${book.author} <br> <br>` +
+                        `Pages: ${book.pages} <br>` +
                         `<p class="read-status"> Read: ${book.read} </p>` +
                         `<button class="readButton" id="${index}">Toggle Read</button>` +
                         `<button class="deleteButton" id="${index}">Delete</button>`
